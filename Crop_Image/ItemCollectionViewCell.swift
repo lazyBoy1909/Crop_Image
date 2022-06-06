@@ -9,9 +9,16 @@ import UIKit
 
 class ItemCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet private weak var itemImageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-
+    
+    func initCell(cellImage image: UIImage?)
+    {
+        if image != nil
+        {
+            self.itemImageView.image = image
+        }
+    }
 }
