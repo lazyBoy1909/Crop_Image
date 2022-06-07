@@ -18,7 +18,6 @@ extension PHAsset
         (object,_,_) in
             assetImages.append(object)
         }
-        assetImages.reverse()
         return assetImages.randomElement()
     }
     
