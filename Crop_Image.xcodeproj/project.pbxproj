@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C89BD49C28503BB3000B5791 /* DragHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89BD49B28503BB3000B5791 /* DragHandle.swift */; };
+		C89BD49E28503D64000B5791 /* ResizableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89BD49D28503D64000B5791 /* ResizableView.swift */; };
+		C89BD4A028503F19000B5791 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89BD49F28503F19000B5791 /* UIViewExtension.swift */; };
 		C8C2521D284DE97A006E452D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C2521C284DE97A006E452D /* AppDelegate.swift */; };
 		C8C2521F284DE97A006E452D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C2521E284DE97A006E452D /* SceneDelegate.swift */; };
 		C8C25221284DE97A006E452D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C25220284DE97A006E452D /* ViewController.swift */; };
@@ -40,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C89BD49B28503BB3000B5791 /* DragHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragHandle.swift; sourceTree = "<group>"; };
+		C89BD49D28503D64000B5791 /* ResizableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizableView.swift; sourceTree = "<group>"; };
+		C89BD49F28503F19000B5791 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		C8C25219284DE97A006E452D /* Crop_Image.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crop_Image.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8C2521C284DE97A006E452D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8C2521E284DE97A006E452D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +124,9 @@
 				C8C2524D284DECBE006E452D /* ItemCollectionViewCell.xib */,
 				C8C25250284DF9AF006E452D /* PHAssetExtension.swift */,
 				C8C25252284DFEFE006E452D /* UIImageExtension.swift */,
+				C89BD49B28503BB3000B5791 /* DragHandle.swift */,
+				C89BD49D28503D64000B5791 /* ResizableView.swift */,
+				C89BD49F28503F19000B5791 /* UIViewExtension.swift */,
 			);
 			path = Crop_Image;
 			sourceTree = "<group>";
@@ -273,8 +282,11 @@
 			files = (
 				C8C25221284DE97A006E452D /* ViewController.swift in Sources */,
 				C8C2524E284DECBE006E452D /* ItemCollectionViewCell.swift in Sources */,
+				C89BD49E28503D64000B5791 /* ResizableView.swift in Sources */,
 				C8C25251284DF9AF006E452D /* PHAssetExtension.swift in Sources */,
+				C89BD49C28503BB3000B5791 /* DragHandle.swift in Sources */,
 				C8C2521D284DE97A006E452D /* AppDelegate.swift in Sources */,
+				C89BD4A028503F19000B5791 /* UIViewExtension.swift in Sources */,
 				C8C2521F284DE97A006E452D /* SceneDelegate.swift in Sources */,
 				C8C25253284DFEFE006E452D /* UIImageExtension.swift in Sources */,
 			);
