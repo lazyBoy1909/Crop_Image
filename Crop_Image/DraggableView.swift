@@ -5,7 +5,7 @@ import UIKit
 
 protocol DraggableViewDelegate: AnyObject
 {
-    func draggableViewDragPanGesture(gesture:UIPanGestureRecognizer)
+    func draggableView(_ view: DraggableView, didPan gesture: UIPanGestureRecognizer)
 }
 
 class DraggableView: UIView {
@@ -42,6 +42,6 @@ class DraggableView: UIView {
     
     @objc func handlePan()
     {
-        delegate?.draggableViewDragPanGesture(gesture: pan)
+        delegate?.draggableView(self, didPan: pan)
     }
 }

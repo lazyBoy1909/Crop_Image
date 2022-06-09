@@ -49,7 +49,7 @@ class ResizableView: UIView {
 // MARK: DraggableViewDelegate
 extension ResizableView: DraggableViewDelegate
 {
-    func draggableViewDragPanGesture(gesture: UIPanGestureRecognizer) {
+    func draggableView(_ view: DraggableView, didPan gesture: UIPanGestureRecognizer) {
         let translation = gesture.translation(in: self)
         switch gesture.view! {
         case topLeft:
