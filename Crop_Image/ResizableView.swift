@@ -3,30 +3,26 @@ import UIKit
 
 class ResizableView: UIView {
 
-    var topLeft:DragHandle!
-    var topRight:DragHandle!
-    var bottomLeft:DragHandle!
-    var bottomRight:DragHandle!
+    var topLeft:DraggableView!
+    var topRight:DraggableView!
+    var bottomLeft:DraggableView!
+    var bottomRight:DraggableView!
 
     override func didMoveToSuperview() {
-        topLeft = DragHandle()
-        topRight = DragHandle()
-        bottomLeft = DragHandle()
-        bottomRight = DragHandle()
+        topLeft = DraggableView()
+        topRight = DraggableView()
+        bottomLeft = DraggableView()
+        bottomRight = DraggableView()
+        topLeft.delegate = self
+        topRight.delegate = self
+        bottomLeft.delegate = self
+        bottomRight.delegate = self
         superview?.addSubview(topLeft)
         superview?.addSubview(topRight)
         superview?.addSubview(bottomLeft)
         superview?.addSubview(bottomRight)
       
-        var pan = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
-        topLeft.addGestureRecognizer(pan)
-        pan = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
-        topRight.addGestureRecognizer(pan)
-        pan = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
-        bottomLeft.addGestureRecognizer(pan)
-        pan = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
-        bottomRight.addGestureRecognizer(pan)
-        pan = UIPanGestureRecognizer(target: self, action: #selector(handleMove))
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(handleMove))
         self.addGestureRecognizer(pan)
         self.updateDragHandles()
       }
@@ -48,8 +44,12 @@ class ResizableView: UIView {
         gesture.setTranslation(CGPoint.zero, in: self.superview!)
         updateDragHandles()
     }
-    
-    @objc func handlePan(gesture:UIPanGestureRecognizer) {
+}
+
+// MARK: DraggableViewDelegate
+extension ResizableView: DraggableViewDelegate
+{
+    func draggableViewDragPanGesture(gesture: UIPanGestureRecognizer) {
         let translation = gesture.translation(in: self)
         switch gesture.view! {
         case topLeft:
@@ -89,6 +89,6 @@ class ResizableView: UIView {
         {
             self.setAnchorPoint(anchorPoint: CGPoint(x: 0.5, y: 0.5))
         }
-  }
+    }
+    
 }
-
