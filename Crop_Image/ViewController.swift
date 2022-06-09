@@ -20,8 +20,18 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         initItemCollectionView()
         getRandomImageFromLibrary()
+        addCropView()
     }
 
+    func addCropView()
+    {
+        let resizableView = ResizableView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+        resizableView.backgroundColor = UIColor(red: 0, green: 0.5, blue: 1.0, alpha: 0.2)
+        let imageFrame = self.cropImageView.frame
+        resizableView.frame = CGRect(x: imageFrame.minX, y: imageFrame.minY, width: imageFrame.width, height: imageFrame.height - 50)
+        self.view.addSubview(resizableView)
+    }
+    
     // MARK: get a random image in device
     func getRandomImageFromLibrary()
     {
