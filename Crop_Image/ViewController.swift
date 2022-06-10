@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         resizableView.backgroundColor = UIColor(red: 0, green: 0.5, blue: 1.0, alpha: 0.2)
         let imageFrame = self.cropImageView.frame
         resizableView.frame = CGRect(x: imageFrame.origin.x, y: imageFrame.origin.y, width: imageFrame.width-16, height: imageFrame.height - 50)
-        self.view.addSubview(resizableView!)
+        self.view.addSubview(resizableView)
     }
     
     // MARK: get a random image in device
@@ -53,13 +53,12 @@ class ViewController: UIViewController {
         let previewViewController = PreviewViewController()
         let xValue = resizableView.frame.origin.x - cropImageView.frame.origin.x - cropImageView.contentRect.minX
         let yValue = resizableView.frame.origin.y - cropImageView.frame.origin.y - cropImageView.contentRect.minY
-        let previewImage = self.cropImageView.image!.cropImage(toRect: CGRect(x: xValue , y: yValue , width: resizableView.frame.width , height: resizableView.frame.height ))
-        if let image = previewImage
+        let toRect = CGRect(x: xValue , y: yValue , width: resizableView.frame.width , height: resizableView.frame.height )
+        if let previewImage = self.cropImageView.image!.cropImage(toRect: toRect)
         {
-            previewViewController.previewImage = image
+            previewViewController.previewImage = previewImage
             self.navigationController?.pushViewController(previewViewController, animated: true)
         }
-        
     }
     
 }
