@@ -21,8 +21,9 @@ class PreviewViewController: UIViewController {
     {
         self.previewImageView.image = previewImage
     }
-
-    @IBAction func saveButtonDidTap(_ sender: UIButton) {
+    
+    func presentAlertToConfirmSaveOption()
+    {
         let alert = UIAlertController(title: "Save Image", message: "Do you want to save this image to your device?", preferredStyle: .actionSheet)
         let okAction = UIAlertAction(title: "OK", style: .default, handler: {
             _ in
@@ -36,5 +37,9 @@ class PreviewViewController: UIViewController {
         alert.addAction(okAction)
         alert.addAction(cancelAction)
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func saveButtonDidTap(_ sender: UIButton) {
+        presentAlertToConfirmSaveOption()
     }
 }
