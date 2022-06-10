@@ -33,8 +33,8 @@ extension UIImage {
     }
     
     //crop image to a Rect
-    static func cropImage(image: UIImage, toRect: CGRect) -> UIImage? {
-        let cgImage :CGImage! = image.cgImage
+        func cropImage(toRect: CGRect) -> UIImage? {
+        let cgImage :CGImage! = self.cgImage
         let croppedCGImage: CGImage! = cgImage.cropping(to: toRect)
         return UIImage(cgImage: croppedCGImage)
     }
