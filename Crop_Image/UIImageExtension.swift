@@ -8,28 +8,43 @@
 import Foundation
 import UIKit
 extension UIImage {
-  
-  enum Axis {
-    case horizontal, vertical
-  }
-  
-  func flipped(_ axis: Axis) -> UIImage {
-    let renderer = UIGraphicsImageRenderer(size: size)
-    
-    return renderer.image {
-      let context = $0.cgContext
-      context.translateBy(x: size.width / 2, y: size.height / 2)
-      
-      switch axis {
-      case .horizontal:
-        context.scaleBy(x: -1, y: 1)
-      case .vertical:
-        context.scaleBy(x: 1, y: -1)
-      }
-      
-      context.translateBy(x: -size.width / 2, y: -size.height / 2)
-      
-      draw(at: .zero)
+    enum Axis {
+      case horizontal, vertical
     }
-  }
+  
+    func flipped(_ axis: Axis) -> UIImage {
+      let renderer = UIGraphicsImageRenderer(size: size)
+
+      return renderer.image {
+        let context = $0.cgContext
+        context.translateBy(x: size.width / 2, y: size.height / 2)
+      
+        switch axis {
+        case .horizontal:
+          context.scaleBy(x: -1, y: 1)
+        case .vertical:
+          context.scaleBy(x: 1, y: -1)
+        }
+      
+        context.translateBy(x: -size.width / 2, y: -size.height / 2)
+      
+        draw(at: .zero)
+        }
+    }
+    
+    //crop image to a Rect
+        func cropImage(toRect: CGRect) -> UIImage? {
+        if let croppedCGImage = self.cgImage?.cropping(to: toRect)
+        {
+            return UIImage(cgImage: croppedCGImage)
+        }
+            
+        return nil
+    }
+    
+    //save image to photo library
+    static func saveImage(image: UIImage) {
+        UIImageWriteToSavedPhotosAlbum(image, self, nil, nil)
+    }
 }
+

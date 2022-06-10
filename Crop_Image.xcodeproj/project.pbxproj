@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C87BB8C1285227BB005B1500 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87BB8BF285227BB005B1500 /* PreviewViewController.swift */; };
+		C87BB8C2285227BB005B1500 /* PreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C87BB8C0285227BB005B1500 /* PreviewViewController.xib */; };
 		C89BD49C28503BB3000B5791 /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89BD49B28503BB3000B5791 /* DraggableView.swift */; };
 		C89BD49E28503D64000B5791 /* ResizableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89BD49D28503D64000B5791 /* ResizableView.swift */; };
 		C89BD4A028503F19000B5791 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89BD49F28503F19000B5791 /* UIViewExtension.swift */; };
@@ -23,6 +25,7 @@
 		C8C2524F284DECBE006E452D /* ItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8C2524D284DECBE006E452D /* ItemCollectionViewCell.xib */; };
 		C8C25251284DF9AF006E452D /* PHAssetExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C25250284DF9AF006E452D /* PHAssetExtension.swift */; };
 		C8C25253284DFEFE006E452D /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C25252284DFEFE006E452D /* UIImageExtension.swift */; };
+		C8FEFB8C2852D01A00BC11DB /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FEFB8B2852D01A00BC11DB /* UIImageViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C87BB8BF285227BB005B1500 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
+		C87BB8C0285227BB005B1500 /* PreviewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreviewViewController.xib; sourceTree = "<group>"; };
 		C89BD49B28503BB3000B5791 /* DraggableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
 		C89BD49D28503D64000B5791 /* ResizableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizableView.swift; sourceTree = "<group>"; };
 		C89BD49F28503F19000B5791 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -63,6 +68,7 @@
 		C8C2524D284DECBE006E452D /* ItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		C8C25250284DF9AF006E452D /* PHAssetExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHAssetExtension.swift; sourceTree = "<group>"; };
 		C8C25252284DFEFE006E452D /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		C8FEFB8B2852D01A00BC11DB /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +133,9 @@
 				C89BD49B28503BB3000B5791 /* DraggableView.swift */,
 				C89BD49D28503D64000B5791 /* ResizableView.swift */,
 				C89BD49F28503F19000B5791 /* UIViewExtension.swift */,
+				C87BB8BF285227BB005B1500 /* PreviewViewController.swift */,
+				C87BB8C0285227BB005B1500 /* PreviewViewController.xib */,
+				C8FEFB8B2852D01A00BC11DB /* UIImageViewExtension.swift */,
 			);
 			path = Crop_Image;
 			sourceTree = "<group>";
@@ -253,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8C25229284DE97B006E452D /* LaunchScreen.storyboard in Resources */,
+				C87BB8C2285227BB005B1500 /* PreviewViewController.xib in Resources */,
 				C8C2524F284DECBE006E452D /* ItemCollectionViewCell.xib in Resources */,
 				C8C25226284DE97B006E452D /* Assets.xcassets in Resources */,
 				C8C25224284DE97A006E452D /* Main.storyboard in Resources */,
@@ -283,8 +293,10 @@
 				C8C25221284DE97A006E452D /* ViewController.swift in Sources */,
 				C8C2524E284DECBE006E452D /* ItemCollectionViewCell.swift in Sources */,
 				C89BD49E28503D64000B5791 /* ResizableView.swift in Sources */,
+				C87BB8C1285227BB005B1500 /* PreviewViewController.swift in Sources */,
 				C8C25251284DF9AF006E452D /* PHAssetExtension.swift in Sources */,
 				C89BD49C28503BB3000B5791 /* DraggableView.swift in Sources */,
+				C8FEFB8C2852D01A00BC11DB /* UIImageViewExtension.swift in Sources */,
 				C8C2521D284DE97A006E452D /* AppDelegate.swift in Sources */,
 				C89BD4A028503F19000B5791 /* UIViewExtension.swift in Sources */,
 				C8C2521F284DE97A006E452D /* SceneDelegate.swift in Sources */,
