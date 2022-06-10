@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     var itemImage: [UIImage?] = [UIImage(named: "ic_rotate1"), UIImage(named: "ic_rotate2"),
                                  UIImage(systemName: "flip.horizontal"), UIImage(systemName: "flip.horizontal.fill")]
     var randomAsset: PHAsset!
-    
+    var resizableView: ResizableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         initItemCollectionView()
@@ -25,11 +25,11 @@ class ViewController: UIViewController {
 
     func addCropView()
     {
-        let resizableView = ResizableView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+        self.resizableView = ResizableView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
         resizableView.backgroundColor = UIColor(red: 0, green: 0.5, blue: 1.0, alpha: 0.2)
         let imageFrame = self.cropImageView.frame
-        resizableView.frame = CGRect(x: imageFrame.minX, y: imageFrame.minY, width: imageFrame.width, height: imageFrame.height - 50)
-        self.view.addSubview(resizableView)
+        resizableView!.frame = CGRect(x: imageFrame.origin.x, y: imageFrame.origin.y, width: imageFrame.width-16, height: imageFrame.height - 50)
+        self.view.addSubview(resizableView!)
     }
     
     // MARK: get a random image in device
@@ -38,7 +38,7 @@ class ViewController: UIViewController {
         if let asset = PHAsset.loadRandomPHAssetImageFromGallery()
         {
             randomAsset = asset
-            let mainImage = randomAsset.fetchImage(widthSize: 500, heightSize: 500, contentMode: .aspectFill)
+            let mainImage = randomAsset.fetchImage(widthSize: cropImageView.frame.width, heightSize: cropImageView.frame.height, contentMode: .aspectFit)
             cropImageView.image = mainImage
         }
     }
@@ -49,6 +49,20 @@ class ViewController: UIViewController {
         itemCollectionView.dataSource = self
         itemCollectionView.register(UINib(nibName: "ItemCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "ItemCollectionViewCell")
     }
+    @IBAction func okButtonDidTap(_ sender: UIButton) {
+        let previewViewController = PreviewViewController()
+        let xValue = resizableView.frame.origin.x - cropImageView.frame.origin.x - cropImageView.contentRect.minX
+        let yValue = resizableView.frame.origin.y - cropImageView.frame.origin.y - cropImageView.contentRect.minY
+        let toRect = CGRect(x: xValue , y: yValue , width: resizableView.frame.width , height: resizableView.frame.height )
+        let previewImage = UIImage.cropImage(image: self.cropImageView.image!, toRect: toRect )
+        if let image = previewImage
+        {
+            previewViewController.previewImage = image
+            self.navigationController?.pushViewController(previewViewController, animated: true)
+        }
+        
+    }
+    
 }
 
 // MARK: CollectionView
