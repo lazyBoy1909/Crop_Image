@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         self.resizableView = ResizableView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
         resizableView.backgroundColor = UIColor(red: 0, green: 0.5, blue: 1.0, alpha: 0.2)
         let imageFrame = self.cropImageView.frame
-        resizableView!.frame = CGRect(x: imageFrame.origin.x, y: imageFrame.origin.y, width: imageFrame.width-16, height: imageFrame.height - 50)
+        resizableView.frame = CGRect(x: imageFrame.origin.x, y: imageFrame.origin.y, width: imageFrame.width-16, height: imageFrame.height - 50)
         self.view.addSubview(resizableView!)
     }
     
@@ -53,8 +53,7 @@ class ViewController: UIViewController {
         let previewViewController = PreviewViewController()
         let xValue = resizableView.frame.origin.x - cropImageView.frame.origin.x - cropImageView.contentRect.minX
         let yValue = resizableView.frame.origin.y - cropImageView.frame.origin.y - cropImageView.contentRect.minY
-        let toRect = CGRect(x: xValue , y: yValue , width: resizableView.frame.width , height: resizableView.frame.height )
-        let previewImage = UIImage.cropImage(image: self.cropImageView.image!, toRect: toRect )
+        let previewImage = self.cropImageView.image!.cropImage(toRect: CGRect(x: xValue , y: yValue , width: resizableView.frame.width , height: resizableView.frame.height ))
         if let image = previewImage
         {
             previewViewController.previewImage = image
