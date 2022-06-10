@@ -54,7 +54,7 @@ class ViewController: UIViewController {
         let xValue = resizableView.frame.origin.x - cropImageView.frame.origin.x - cropImageView.contentRect.minX
         let yValue = resizableView.frame.origin.y - cropImageView.frame.origin.y - cropImageView.contentRect.minY
         let toRect = CGRect(x: xValue , y: yValue , width: resizableView.frame.width , height: resizableView.frame.height )
-        if let previewImage = self.cropImageView.image!.cropImage(toRect: toRect)
+        if let previewImage = self.cropImageView.image?.cropImage(toRect: toRect)
         {
             previewViewController.previewImage = previewImage
             self.navigationController?.pushViewController(previewViewController, animated: true)

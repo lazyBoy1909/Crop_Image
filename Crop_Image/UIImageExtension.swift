@@ -34,9 +34,12 @@ extension UIImage {
     
     //crop image to a Rect
         func cropImage(toRect: CGRect) -> UIImage? {
-        let cgImage :CGImage! = self.cgImage
-        let croppedCGImage: CGImage! = cgImage.cropping(to: toRect)
-        return UIImage(cgImage: croppedCGImage)
+        if let croppedCGImage = self.cgImage?.cropping(to: toRect)
+        {
+            return UIImage(cgImage: croppedCGImage)
+        }
+            
+        return nil
     }
     
     //save image to photo library
