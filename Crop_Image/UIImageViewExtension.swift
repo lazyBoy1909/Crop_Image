@@ -7,7 +7,7 @@
 
 import UIKit
 extension UIImageView {
-    // return the coordinate of the image in the imageView
+    // return the coordinate of the image on its imageView
     var contentRect: CGRect {
         guard let image = image else { return bounds }
         guard contentMode == .scaleAspectFit else { return bounds }
